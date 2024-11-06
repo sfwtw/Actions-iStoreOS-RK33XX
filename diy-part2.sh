@@ -26,9 +26,13 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 # ls package/base-files/files/etc/
 
 
-
-
-
+git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
+mv -f tmp_modem/luci-app-modem package/
+mv -f tmp_modem/luci-app-sms-tool package/
+mv -f tmp_modem/quectel_MHI package/
+mv -f tmp_modem/quectel_cm_5G package/
+mv -f tmp_modem/meig-cm package/
+mv -f tmp_modem/meig_QMI_WWAN package/
 
 # 移植以下机型
 # RK3399 R08
