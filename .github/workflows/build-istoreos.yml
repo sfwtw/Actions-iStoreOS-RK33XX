@@ -69,6 +69,14 @@ jobs:
         if [ -f "$FILE_PATH1" ] && [ -s "$FILE_PATH1" ]; then
           content=$(cat ${GITHUB_WORKSPACE}/configfiles/config_data.txt)
           configdata=$(echo "$content" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
+
+          # 读取 disable 文件中的关键词
+          while IFS= read -r keyword; do
+            grep -E "^.*${keyword}.*=.*" ./rk33xx/.config | sed 's/=.*//' | while read -r line; do
+              echo "删除配置项: $line"
+            done
+            sed -i "s/^\\(.*${keyword}.*\\)=.*/# \\1 is not set/" ./rk33xx/.config
+          done < ${GITHUB_WORKSPACE}/configfiles/disable
       
           # 清除 .config 文件中与 config_data.txt 重复的项
           while IFS= read -r line; do
@@ -80,14 +88,6 @@ jobs:
           sed -i "/CONFIG_PACKAGE_dtc.*=.*/d" ./rk33xx/.config
 
           sed -i "s/^\(CONFIG_PACKAGE_rtl[0-9a-z-]*firmware\)=y$/\1=n/" ./rk33xx/.config
-
-          # 读取 disable 文件中的关键词
-          while IFS= read -r keyword; do
-            grep -E "^.*${keyword}.*=.*" ./rk33xx/.config | sed 's/=.*//' | while read -r line; do
-              echo "删除配置项: $line"
-            done
-            sed -i "s/^\\(.*${keyword}.*\\)=.*/# \\1 is not set/" ./rk33xx/.config
-          done < ${GITHUB_WORKSPACE}/configfiles/disable
 
           # 合并 config_data.txt 的内容到 .config 文件中
           echo -e "\\n$configdata" >> ./rk33xx/.config
