@@ -64,7 +64,6 @@ rm -rf package/kernel/r8125
 rm -rf package/kernel/trelay
 rm -rf package/firmware/prism54-firmware
 rm -rf package/firmware/cypress-firmware
-rm -rf feeds/packages/mail/nail
 rm -rf feeds/packages/net/ddns-scripts
 rm -rf package/network/services/relayd
 rm -rf feeds/packages/net/coova-chilli
@@ -73,7 +72,6 @@ rm -rf feeds/packages/libs/libimobiledevice
 rm -rf package/kernel/button-hotplug
 rm -rf feeds/packages/kernel/v4l2loopback
 rm -rf feeds/telephony/net/rtpengine
-rm -rf feeds/telephony/libs/dahdi-linux
 rm -rf package/network/services/hostapd
 rm -rf package/feeds/packages/prometheus-node-exporter-lua
 rm -rf package/feeds/luci/luci-app-ddns
@@ -83,15 +81,14 @@ rm -rf package/kernel/acx-mac80211
 rm -rf package/feeds/telephony/asterisk
 rm -rf package/feeds/routing/bmx7
 rm -rf package/feeds/packages/collectd
-rm -rf package/feeds/telephony/dahdi-tools
 rm -rf package/feeds/luci/luci-mod-battstatus
 rm -rf package/feeds/third_party/luci-app-LingTiGameAcc
 rm -rf package/feeds/luci/luci-proto-relay
-rm -rf package/feeds/packages/macremapper
 rm -rf package/kernel/mwlwifi
 rm -rf package/feeds/packages/prometheus-node-exporter-lua
-rm -rf package/system/rpcd
-rm -rf package/feeds/luci/rpcd-mod-luci
+rm -rf package/feeds/luci/luci-app-bmx7
+rm -rf package/feeds/luci/luci-app-statistics
+
 rm -rf package/network/utils/rssileds
 rm -rf package/kernel/rtl8812au-ac
 rm -rf package/feeds/packages/travelmate
