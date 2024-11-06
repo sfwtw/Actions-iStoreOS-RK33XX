@@ -45,9 +45,6 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # 移除不需要的包
-rm -rf package/network/utils/umbim
-rm -rf package/network/utils/uqmi
-
 rm -rf feeds/packages/utils/gl-mifi-mcu
 rm -rf package/kernel/rtw88-oot
 rm -rf package/kernel/rtw89-oot
