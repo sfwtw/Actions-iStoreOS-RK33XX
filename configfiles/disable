@@ -1,13 +1,1 @@
-CONFIG_MODEMMANAGER_WITH_QMI
-ddns
-CONFIG_PACKAGE_kmod-usb-net-qmi-wwan
-CONFIG_PACKAGE_libqmi
-CONFIG_PACKAGE_luci-proto-qmi
-CONFIG_PACKAGE_qmi-utils
-iw
-cfg80211
-mac80211
-mt79
-mt76
-rtl
-linkease
+
