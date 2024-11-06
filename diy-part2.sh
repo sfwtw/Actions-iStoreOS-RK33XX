@@ -90,10 +90,9 @@ rm -rf package/feeds/packages/prometheus-node-exporter-lua
 rm -rf package/feeds/luci/luci-app-bmx7
 rm -rf package/feeds/luci/luci-app-statistics
 
-rm -rf package/network/utils/rssileds
 rm -rf package/kernel/rtl8812au-ac
 rm -rf package/feeds/packages/travelmate
-
+rm -rf package/feeds/luci/luci-app-travelmate
 git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem quectel_MHI quectel_cm_5G meig-cm quectel_Gobinet
 
 # git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
