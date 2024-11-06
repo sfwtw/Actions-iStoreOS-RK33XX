@@ -40,6 +40,7 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 
 # Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.31.4）
 # sed -i 's/192.168.100.1/192.168.1.1/g' package/base-files/files/bin/config_generate
+cat package/base-files/files/bin/config_generate
 
 # TTYD 免登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
@@ -54,7 +55,6 @@ rm -rf package/kernel/rkwifi
 rm -rf package/kernel/mt76
 rm -rf feeds/routing/batman-adv
 rm -rf package/kernel/mac80211
-rm -rf package/network/utils/iwinfo
 rm -rf package/firmware/wireless-regdb
 rm -rf feeds/third/ddns-scripts_aliyun
 rm -rf package/firmware/b43legacy-firmware
