@@ -68,7 +68,6 @@ rm -rf feeds/packages/net/ddns-scripts
 rm -rf package/network/services/relayd
 rm -rf feeds/packages/net/coova-chilli
 rm -rf feeds/third/ddns-scripts_aliyun
-rm -rf feeds/packages/libs/libimobiledevice
 rm -rf package/kernel/button-hotplug
 rm -rf feeds/packages/kernel/v4l2loopback
 rm -rf feeds/telephony/net/rtpengine
@@ -78,8 +77,10 @@ rm -rf package/feeds/luci/luci-app-ddns
 rm -rf package/feeds/packages/dawn
 rm -rf package/firmware/ath10k-ct-firmware
 rm -rf package/kernel/acx-mac80211
-rm -rf package/feeds/telephony/asterisk
 rm -rf package/feeds/routing/bmx7
+rm -rf package/feeds/packages/bmx7-dnsupdate
+rm -rf package/feeds/luci/luci-app-dawn
+
 rm -rf package/feeds/packages/collectd
 rm -rf package/feeds/luci/luci-mod-battstatus
 rm -rf package/feeds/third_party/luci-app-LingTiGameAcc
@@ -92,9 +93,6 @@ rm -rf package/feeds/luci/luci-app-statistics
 rm -rf package/network/utils/rssileds
 rm -rf package/kernel/rtl8812au-ac
 rm -rf package/feeds/packages/travelmate
-rm -rf package/feeds/packages/usbmuxd
-rm -rf package/feeds/packages/zabbix
-rm -rf package/feeds/telephony/yate
 
 git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem quectel_MHI quectel_cm_5G meig-cm quectel_Gobinet
 
