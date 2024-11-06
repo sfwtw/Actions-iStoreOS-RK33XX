@@ -80,7 +80,7 @@ jobs:
             grep -E "^.*${keyword}.*=.*" ./rk33xx/.config | sed 's/=.*//' | while read -r line; do
               echo "删除配置项: $line"
             done
-            sed -i "s/^\\(CONFIG_.*${keyword}.*=.*\\)$/# \\1 is not set/" ./rk33xx/.config
+            sed -i "s/^\\(.*${keyword}.*\\)=.*/# \\1 is not set/" ./rk33xx/.config
           done < ${GITHUB_WORKSPACE}/configfiles/disable
 
           # 清除.config配置文件里面重复的配置项
