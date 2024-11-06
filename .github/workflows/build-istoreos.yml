@@ -77,7 +77,7 @@ jobs:
 
           # 读取disable文件中的关键词
           while IFS= read -r keyword; do
-            grep -E "^CONFIG_.*${keyword}.*=.*" ./rk33xx/.config | sed 's/=.*//' | while read -r line; do
+            grep -E "^.*${keyword}.*=.*" ./rk33xx/.config | sed 's/=.*//' | while read -r line; do
               echo "删除配置项: $line"
             done
             sed -i "s/^\\(CONFIG_.*${keyword}.*=.*\\)$/# \\1 is not set/" ./rk33xx/.config
