@@ -75,6 +75,29 @@ rm -rf feeds/packages/kernel/v4l2loopback
 rm -rf feeds/telephony/net/rtpengine
 rm -rf feeds/telephony/libs/dahdi-linux
 rm -rf package/network/services/hostapd
+rm -rf package/feeds/packages/prometheus-node-exporter-lua
+rm -rf package/feeds/luci/luci-app-ddns
+rm -rf package/feeds/packages/dawn
+rm -rf package/firmware/ath10k-ct-firmware
+rm -rf package/kernel/acx-mac80211
+rm -rf package/feeds/telephony/asterisk
+rm -rf package/feeds/routing/bmx7
+rm -rf package/feeds/packages/collectd
+rm -rf package/feeds/telephony/dahdi-tools
+rm -rf package/feeds/luci/luci-mod-battstatus
+rm -rf package/feeds/third_party/luci-app-LingTiGameAcc
+rm -rf package/feeds/luci/luci-proto-relay
+rm -rf package/feeds/packages/macremapper
+rm -rf package/kernel/mwlwifi
+rm -rf package/feeds/packages/prometheus-node-exporter-lua
+rm -rf package/system/rpcd
+rm -rf package/feeds/luci/rpcd-mod-luci
+rm -rf package/network/utils/rssileds
+rm -rf package/kernel/rtl8812au-ac
+rm -rf package/feeds/packages/travelmate
+rm -rf package/feeds/packages/usbmuxd
+rm -rf package/feeds/packages/zabbix
+rm -rf package/feeds/telephony/yate
 
 git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem quectel_MHI quectel_cm_5G meig-cm quectel_Gobinet
 
