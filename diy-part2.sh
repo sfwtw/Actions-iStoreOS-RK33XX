@@ -7,6 +7,16 @@
 # Blog: https://p3terx.com
 #===============================================
 
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package
+  cd .. && rm -rf $repodir
+}
+
 
 # update ubus git HEAD
 cp -f $GITHUB_WORKSPACE/configfiles/ubus_Makefile package/system/ubus/Makefile
@@ -25,6 +35,14 @@ sed -i "s/:443/:4443/g" package/network/services/uhttpd/files/uhttpd.config
 cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 # ls package/base-files/files/etc/
 
+# 更改默认 Shell 为 zsh
+# sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
+
+# Modify default IP（FROM 192.168.1.1 CHANGE TO 192.168.31.4）
+# sed -i 's/192.168.100.1/192.168.1.1/g' package/base-files/files/bin/config_generate
+
+# TTYD 免登录
+sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
 mv -f tmp_modem/luci-app-modem package/
