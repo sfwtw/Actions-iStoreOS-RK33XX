@@ -44,14 +44,51 @@ cp -a $GITHUB_WORKSPACE/configfiles/etc/* package/base-files/files/etc/
 # TTYD 免登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
-mv -f tmp_modem/luci-app-modem package/
-mv -f tmp_modem/luci-app-sms-tool package/
-mv -f tmp_modem/quectel_MHI package/
-mv -f tmp_modem/quectel_cm_5G package/
-mv -f tmp_modem/meig-cm package/
-mv -f tmp_modem/meig_QMI_WWAN package/
-rm -rf tmp_modem
+# 移除不需要的包
+rm -rf package/network/utils/umbim
+rm -rf package/network/utils/uqmi
+
+rm -rf feeds/packages/utils/gl-mifi-mcu
+rm -rf package/kernel/rtw88-oot
+rm -rf package/kernel/rtw89-oot
+rm -rf package/kernel/rtl8812au-ct
+rm -rf package/kernel/ath10k-ct
+rm -rf package/kernel/rkwifi
+rm -rf package/kernel/mt76
+rm -rf feeds/routing/batman-adv
+rm -rf package/kernel/mac80211
+rm -rf package/network/utils/iwinfo
+rm -rf package/firmware/wireless-regdb
+rm -rf feeds/third/ddns-scripts_aliyun
+rm -rf package/firmware/b43legacy-firmware
+rm -rf package/firmware/rkwifi-firmware
+rm -rf package/kernel/r8126
+rm -rf package/kernel/r8125
+rm -rf package/kernel/trelay
+rm -rf package/firmware/prism54-firmware
+rm -rf package/firmware/cypress-firmware
+rm -rf feeds/packages/mail/nail
+rm -rf feeds/packages/net/ddns-scripts
+rm -rf package/network/services/relayd
+rm -rf feeds/packages/net/coova-chilli
+rm -rf feeds/third/ddns-scripts_aliyun
+rm -rf feeds/packages/libs/libimobiledevice
+rm -rf package/kernel/button-hotplug
+rm -rf feeds/packages/kernel/v4l2loopback
+rm -rf feeds/telephony/net/rtpengine
+rm -rf feeds/telephony/libs/dahdi-linux
+rm -rf package/network/services/hostapd
+
+git_sparse_clone main https://github.com/Siriling/5G-Modem-Support.git luci-app-modem quectel_MHI quectel_cm_5G meig-cm quectel_Gobinet
+
+# git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
+# mv -f tmp_modem/luci-app-modem package/
+# mv -f tmp_modem/luci-app-sms-tool package/
+# mv -f tmp_modem/quectel_MHI package/
+# mv -f tmp_modem/quectel_cm_5G package/
+# mv -f tmp_modem/meig-cm package/
+# mv -f tmp_modem/meig_QMI_WWAN package/
+# rm -rf tmp_modem
 
 # 移植以下机型
 # RK3399 R08
