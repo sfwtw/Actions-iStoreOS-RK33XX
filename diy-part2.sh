@@ -33,6 +33,7 @@ mv -f tmp_modem/quectel_MHI package/
 mv -f tmp_modem/quectel_cm_5G package/
 mv -f tmp_modem/meig-cm package/
 mv -f tmp_modem/meig_QMI_WWAN package/
+rm -rf tmp_modem
 
 # 移植以下机型
 # RK3399 R08
