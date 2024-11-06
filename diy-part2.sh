@@ -76,7 +76,7 @@ rm -rf feeds/telephony/net/rtpengine
 rm -rf feeds/telephony/libs/dahdi-linux
 rm -rf package/network/services/hostapd
 
-git_sparse_clone main https://github.com/Siriling/5G-Modem-Support.git luci-app-modem quectel_MHI quectel_cm_5G meig-cm quectel_Gobinet
+git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem quectel_MHI quectel_cm_5G meig-cm quectel_Gobinet
 
 # git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
 # mv -f tmp_modem/luci-app-modem package/
