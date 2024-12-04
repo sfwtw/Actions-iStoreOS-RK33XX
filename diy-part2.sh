@@ -93,7 +93,7 @@ rm -rf package/feeds/luci/luci-app-statistics
 rm -rf package/kernel/rtl8812au-ac
 rm -rf package/feeds/packages/travelmate
 rm -rf package/feeds/luci/luci-app-travelmate
-git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem quectel_MHI quectel_cm_5G quectel_QMI_WWAN quectel_Gobinet fibocom_MHI fibocom-dial fibocom_QMI_WWAN 
+# git_sparse_clone main https://github.com/Siriling/5G-Modem-Support luci-app-modem quectel_MHI quectel_cm_5G quectel_QMI_WWAN quectel_Gobinet fibocom_MHI fibocom-dial fibocom_QMI_WWAN 
 
 # git clone https://github.com/Siriling/5G-Modem-Support.git tmp_modem
 # mv -f tmp_modem/luci-app-modem package/
